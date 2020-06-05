@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Entrega:</strong>
+  <%= @entrega_item.entrega_id %>
+</p>
+
+<p>
+  <strong>Produto:</strong>
+  <%= @entrega_item.produto_id %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @entrega_item.quantidade %>
+</p>
+
+<p>
+  <strong>Vl unitario:</strong>
+  <%= @entrega_item.vl_unitario %>
+</p>
+
+<p>
+  <strong>Vl total:</strong>
+  <%= @entrega_item.vl_total %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @entrega_item.status %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @entrega_item.obs %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @entrega_item.created_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @entrega_item.updated_by %>
+</p>
+
+<%= link_to 'Edit', edit_entrega_item_path(@entrega_item) %> |
+<%= link_to 'Back', entrega_items_path %>

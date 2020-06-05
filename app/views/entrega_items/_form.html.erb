@@ -1,0 +1,62 @@
+<%= form_for(entrega_item) do |f| %>
+  <% if entrega_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entrega_item.errors.count, "error") %> prohibited this entrega_item from being saved:</h2>
+
+      <ul>
+      <% entrega_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entrega_id %>
+    <%= f.number_field :entrega_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :produto_id %>
+    <%= f.number_field :produto_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantidade %>
+    <%= f.text_field :quantidade %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_unitario %>
+    <%= f.text_field :vl_unitario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_total %>
+    <%= f.text_field :vl_total %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :obs %>
+    <%= f.text_area :obs %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_by %>
+    <%= f.text_field :created_by %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_by %>
+    <%= f.text_field :updated_by %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,106 @@
+
+<h4>Consulta de Pedidos
+  <div class="right">
+    <a class="btn-floating btn-large waves-effect waves-light cyan darken-3" href="<%= pedido_path(@pedido, format: 'pdf')%>"><i class="material-icons">print</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
+
+  </div>
+</h4>
+  <div class="row">
+      <div class="col s8">
+      <label for="disabled">Cliente</label>
+      <input disabled value="<%=@pedido.nm_cliente %>" id="disabled" type="text" class="validate">
+      </div>
+      <div class="col s3">
+      <!-- <label for="disabled">Cliente</label> -->
+      <input disabled value="<%= @pedido.cliente_id %>" id="disabled" type="text" class="validate">
+      </div>
+
+
+  </div>
+  <div class="row">
+    <div class="col s4">
+      <label for="disabled">Data Prevista</label>
+      <input disabled value="<%=@pedido.dt_prevista.try(:strftime,"%d/%m/%Y")%>" id="disabled" type="text" class="validate">
+    </div>
+    <div class="col s4">
+      <label for="disabled">Valor Pedido</label>
+      <input disabled value="<%=@pedido.vl_pedido%>" id="disabled" type="text" class="validate">
+    </div>
+    <div class="col s4">
+      <label for="disabled">status</label>
+      <input disabled value="<%=@pedido.status%>" id="disabled" type="text" class="validate">
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col s8">
+      <label for="disabled">Obs</label>
+      <input disabled value="<%=@pedido.obs%>" id="disabled" type="text" class="validate">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s4">
+      <label for="disabled">Criado por</label>
+      <input disabled value="<%=@pedido.created_by%>" id="disabled" type="text" class="validate">
+    </div>
+    <div class="col s4">
+      <label for="disabled">Alterado por</label>
+      <input disabled value="<%=@pedido.updated_by%>" id="disabled" type="text" class="validate">
+    </div>
+
+  </div>
+
+
+
+  <!-- <div class="row">
+        <div class="col s12">
+          <span class="card-title"><h5>Itens da Entrega</h5></span>
+          <div class="card cyan darken-3">
+            <div class="card-content white-text">
+              <strong>
+              <div class="row">
+                    <div class="col s6">
+                      Descrição
+                    </div>
+                    <div class="col s2 center">
+                      Quantidade
+                    </div>
+                    <div class="col s2 center">
+                      Vl. Unitário
+                    </div>
+                    <div class="col s2 center">
+                      Vl. Total
+                    </div>
+              </div></strong>
+              < %for entrega_item in @entrega.entrega_items%>
+                <div class="row">
+                      <div class="col s6">
+                        < %= entrega_item.produto.try(:name)  %>
+                      </div>
+                      <div class="col s2 center">
+                        < %= entrega_item.quantidade %>
+                      </div>
+                      <div class="col s2 center">
+                        < %= entrega_item.vl_unitario %>
+                      </div>
+                      <div class="col s2 center">
+                        < %= entrega_item.vl_total %>
+                      </div>
+                </div>
+
+              < %end%>
+            </div>
+            <div class="card-action">
+              <!-- link_to_add_fields(name, f, association) -->
+              <!-- <= link_to_add_fields "Novo Item", f, "entrega_item"%> -->
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+  <%= link_to 'Editar', edit_pedido_path(@pedido) %> |
+  <%= link_to 'Voltar', pedidos_path %>

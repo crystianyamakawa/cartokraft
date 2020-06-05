@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nr_localizador: MyString
+  status: 
+  area: 1
+  largura: 1
+  comprimento: 1
+  tp_material: MyString
+  fornecedor_id: 1
+  obs: MyText
+  created_by: MyString
+  updated_by: MyString
+
+two:
+  name: MyString
+  nr_localizador: MyString
+  status: 
+  area: 1
+  largura: 1
+  comprimento: 1
+  tp_material: MyString
+  fornecedor_id: 1
+  obs: MyText
+  created_by: MyString
+  updated_by: MyString

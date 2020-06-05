@@ -1,0 +1,22 @@
+<div class="fields">
+   <div class="col s5">
+     <%= f.label :Produtos%>
+     <%= f.grouped_collection_select :produto_id, @clientes, :produtos, :name, :id, :name%>
+
+   </div>
+   <div class="col s2">
+     <%= f.label "Quantidade"%>
+     <%= f.text_field :quantidade %>
+   </div>
+   <div class="col s2">
+     <%= f.label "Valor Unit"%>
+     <%= f.text_field :vl_unitario %>
+   </div>
+   <div class="col s2">
+     <%= f.label "Valor Total"%>
+     <%= f.text_field :vl_total %>
+   </div>
+   <div class="col s1">
+     <%= link_to_remove_fields "Excluir", f %>
+   </div>
+ </div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  periodo: 2017-06-23
+  fin_conta_id: 1
+  vl_saldo: 1.5
+  created_by: MyString
+  updated_by: MyString
+
+two:
+  periodo: 2017-06-23
+  fin_conta_id: 1
+  vl_saldo: 1.5
+  created_by: MyString
+  updated_by: MyString

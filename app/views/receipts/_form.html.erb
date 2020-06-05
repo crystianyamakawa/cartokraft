@@ -1,0 +1,67 @@
+<%= form_for(receipt) do |f| %>
+  <% if receipt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(receipt.errors.count, "error") %> prohibited this receipt from being saved:</h2>
+
+      <ul>
+      <% receipt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %>
+    <%= f.number_field :type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :partner_id %>
+    <%= f.text_field :partner_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :entrega_id %>
+    <%= f.text_field :entrega_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount_scheduled %>
+    <%= f.text_field :amount_scheduled %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_scheduled %>
+    <%= f.date_select :date_scheduled %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_executed %>
+    <%= f.date_select :date_executed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ammount_executed %>
+    <%= f.text_field :ammount_executed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :obs %>
+    <%= f.text_area :obs %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

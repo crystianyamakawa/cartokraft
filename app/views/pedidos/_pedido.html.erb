@@ -1,0 +1,93 @@
+<%= form_for(pedido) do |f| %>
+
+<div class="table-responsive center">
+
+
+
+<table class="table table-striped">
+
+  <tr>
+    <td colspan="1"><strong>Cliente:</strong></td>
+    <td colspan="2" > <%= f.text_field( :nm_cliente) %></td>
+    <td colspan="1"><strong>Produto:</strong></td>
+    <td colspan="2" class="text-left"><%= f.text_field( :ds_produto) %></td>
+
+  </tr>
+  <!-- <tr>
+    <td colspan="2"><strong>Cliente no Sistema:</strong></td>
+    <td colspan="2"><= f.select(:cliente_id, @clientes.map {|s| [s.name, s.id]}, { id: 'cliente_select' })%></td>
+    <td colspan="2"><strong>Produto Sistema:</strong></td>
+    <td colspan="2 class="text-left"><= f.select(:produto_id, @produtos.map {|s| [s.name, s.id]}, { id: 'produto_select'})%></td>
+  </tr> -->
+  <tr>
+    <td colspan="1"><strong>Tipo Papel:</strong></td>
+    <td colspan="2" class="text-left"><%= f.select(:tp_papel, @tp_papel)%></td>
+    <td colspan="2"><strong>Tipo Produto:</strong></td>
+    <td colspan="2" class="text-left"><%= f.select(:tp_produto, @tp_produto)%></td>
+  </tr>
+
+
+  <tr>
+    <td colspan="1"><strong>Status:</strong></td>
+    <td colspan="2"><%= f.select(:status, @status) %></td>
+    <td colspan="2"><strong>Data Prevista:</strong></td>
+    <td colspan="2">  <%= f.date_field :dt_prevista , :class=>"datepicker"%></td>
+    <td colspan="1"><strong>Valor Pedido:</strong></td>
+    <td colspan="2"><%=f.text_field(:vl_total_pedido) %></td>
+  </tr>
+
+  <tr>
+    <td colspan="2"><strong>Comprimento:</strong></td>
+    <td colspan="1"><%= f.text_field(:vl_comprimento) %></td>
+    <td colspan="2"><strong>Largura:</strong></td>
+    <td colspan="1"><%= f.text_field(:vl_largura) %></td>
+    <td colspan="2"><strong>Altura:</strong></td>
+    <td colspan="1"><%=f.text_field(:vl_altura) %></td>
+  </tr>
+
+  <tr>
+    <td colspan="2"><strong>Qtd Pedido:</strong></td>
+    <td colspan="1"><%= f.text_field(:qt_pedido) %></td>
+    <td colspan="2"><strong>Valor Custo:</strong></td>
+    <td colspan="1"><%= f.text_field(:vl_custo) %></td>
+    <td colspan="2"><strong>Valor Venda:</strong></td>
+    <td colspan="1"><%=f.text_field(:vl_venda) %></td>
+
+  </tr>
+
+  <tr>
+    <td colspan="2"><strong>Valor Pedido:</strong></td>
+    <td colspan="1"><%= f.text_field(:vl_total_pedido) %></td>
+    <td colspan="2"><strong>Qtd Produzido:</strong></td>
+    <td colspan="1"><%=f.text_field(:qt_produzido) %></td>
+    <td colspan="2"><strong>Valor Venda:</strong></td>
+    <td colspan="1"><%= f.text_field(:vl_total_venda) %></td>
+
+  </tr>
+
+  <tr>
+    <td colspan="2"><strong>Data Produzido:</strong></td>
+    <td colspan="1"><%= f.date_field(:dt_produzido , :class=>"datepicker") %></td>
+    <td colspan="2"><strong>Data Entrega:</strong></td>
+    <td colspan="1"><%=f.date_field(:dt_entrega, :class=>"datepicker")  %></td>
+    <td colspan="2"><strong>Data Fechamento:</strong></td>
+    <td colspan="1"><%= f.date_field(:dt_fechamento, :class=>"datepicker") %></td>
+
+  </tr>
+
+  <tr>
+      <td colspan="1"><strong>OBS:</strong></td>
+      <td colspan="2"><%=f.text_area :obs %></td>
+  </tr>
+
+  <!-- <tr>
+    <td colspan="1"><strong>Criado por:</strong></td>
+    <td colspan="2"><= f.text_field :created_by %></td>
+    <td colspan="1"><strong>Alterado por:</strong></td>
+    <td colspan="2">  <= f.text_field :updated_by %></td>
+  </tr> -->
+
+
+</table >
+</div >
+<% end %>

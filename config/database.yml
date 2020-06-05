@@ -1,0 +1,25 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: 123brain
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: cartokraft
+  username: cartokraft
+  host: mysql.cartokraft.com.br
+  password: 123brain
+  #<= ENV['ADMKRAFT_DATABASE_PASSWORD'] %># database: onkraft
+  # username: root
+  # password: admin
+  # host: localhost
+
+production:
+  <<: *default
+  database: cartokraft
+  username: cartokraft
+  host: mysql.cartokraft.com.br
+  password: 123brain #<= ENV['ADMKRAFT_DATABASE_PASSWORD'] %>

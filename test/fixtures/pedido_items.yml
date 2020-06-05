@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pedido_id: 1
+  ds_produto: MyString
+  produto_id: 1
+  vl_largura: 1.5
+  vl_comprimento: 1.5
+  vl_altura: 1.5
+  tp_papel: MyString
+  tp_produto: MyString
+  qt_pedido: 1.5
+  qt_produzido: 1.5
+  vl_custo: 1.5
+  vl_venda: 1.5
+  vl_total: 1.5
+  status: MyString
+  obs: MyText
+  dt_prevista: 2020-05-21
+  dt_entrega: 2020-05-21
+  dt_produzido: 2020-05-21
+  created_by: MyString
+  updated_by: MyString
+
+two:
+  pedido_id: 1
+  ds_produto: MyString
+  produto_id: 1
+  vl_largura: 1.5
+  vl_comprimento: 1.5
+  vl_altura: 1.5
+  tp_papel: MyString
+  tp_produto: MyString
+  qt_pedido: 1.5
+  qt_produzido: 1.5
+  vl_custo: 1.5
+  vl_venda: 1.5
+  vl_total: 1.5
+  status: MyString
+  obs: MyText
+  dt_prevista: 2020-05-21
+  dt_entrega: 2020-05-21
+  dt_produzido: 2020-05-21
+  created_by: MyString
+  updated_by: MyString

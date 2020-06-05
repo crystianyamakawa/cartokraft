@@ -1,0 +1,41 @@
+rails g model Partner name:string phone:string cell_phone:string obs:text contact:string street:string number:string neighborhood:string city:string postal:string state:string
+
+rails g model Cliente name:string dt_nascimento:date nr_documento:string tp_documento:string nr_cpf_cnpj:string rua:string complemento:string numero:string bairro:string cidade:string uf:string cep:string obs:text created_by:string updated_by:string
+
+#rails g model FinConta name:string banco:string agencia:string conta:string saldo:float status:string obs:text created_by:string updated_by:string
+
+#rails g model FechamentoCaixa periodo:date fin_conta_id:integer vl_saldo:float created_by:string updated_by:string
+
+#rails g model Despesas name:string tp_despesa:string fornecedor_id:integer vl_despesa:float status:status dt_previsto:date dt_executado:date vl_executado:float obs:text created_by:string updated_by:string
+
+#rails g model FinMovimento tp_movimento:string name:string valor:float status:string motivo_status:string dt_previsto:date dt_executado:date origem_type:string origem_id:integer fin_conta_id:integer obs:text created_by:string updated_by:string
+
+#rails g scaffold receipt name:string type:integer:string partner:references entrega:references amount_scheduled:decimal status:integer date_scheduled:date date_executed:date ammount_executed:decimal obs:text
+
+rails g scaffold material name:string nr_localizador:string status:status area:integer largura:integer comprimento:integer tp_material:string fornecedor_id:integer  obs:text created_by:string updated_by:string
+
+rails g scaffold compra name:string fornecedor_id:integer vl_total:float status:string dt_recebimento:date obs:text created_by:string updated_by:string
+
+rails g scaffold compra_item compra_id:integer produto_id:integer quantidade:float vl_unitario:float vl_total:float status:string obs:text created_by:string updated_by:string
+
+rails g scaffold produto name:string nr_localizador:string status:status area:integer largura:integer comprimento:integer tp_material:string fornecedor_id:integer obs:text created_by:string updated_by:string
+
+rails g scaffold venda name:string cliente_id:integer vl_total:float vl_imposto:float status:string dt_prevista:date obs:text nr_notafiscal:string created_by:string updated_by:string
+rails g scaffold venda_item venda_id:integer produto_id:integer quantidade:float vl_unitario:float vl_total:float status:string obs:text created_by:string updated_by:string
+
+rails g scaffold entrega venda_id:integer cliente_id:integer vl_total:float status:string dt_entrega:date obs:text nr_notafiscal:string created_by:string updated_by:string
+rails g scaffold entrega_item entrega_id:integer produto_id:integer quantidade:float vl_unitario:float vl_total:float status:string obs:text created_by:string updated_by:string
+
+
+rails g scaffold estoque name:string obs:text created_by:string updated_by:string
+rails g scaffold estoque_produto estoque_id:integer produto_id:integer quantidade:float compra_item_id:integer created_by:string updated_by:string
+
+
+rails g scaffold ordem_producao
+rails g scaffold ordem_producao_material
+
+rails g model recebimento_entrega recebimento_id:integer entrega_id:integer obs:text created_by:string updated_by:string
+
+
+rails g scaffold pedido nm_cliente:string cliente_id:integer vl_pedido:float status:string dt_prevista:date obs:text created_by:string updated_by:string
+rails g scaffold pedido_item pedido_id:integer ds_produto:string produto_id:integer vl_largura:float vl_comprimento:float vl_altura:float tp_papel:string tp_produto:string qt_pedido:float qt_produzido:float vl_custo:float vl_venda:float vl_total:float status:string obs:text dt_prevista:date dt_entrega:date dt_produzido:date created_by:string updated_by:string

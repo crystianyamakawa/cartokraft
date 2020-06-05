@@ -1,0 +1,35 @@
+<h4>Produtos</h4>
+
+<table id="datatable" class="mdl-data-table" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>name</th>
+      <th>Area</th>
+      <th>Valor Custo</th>
+      <th>Valor Venda</th>
+      <th>Material</th>
+      <th class="center">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @produtos.each do |produto| %>
+      <tr>
+        <td><%= produto.cliente.try(:name) %></td>
+        <td><%= produto.name %></td>
+        <td><%= produto.area %></td>
+        <td><%= produto.vl_custo %></td>
+        <td><%= produto.vl_venda %></td>
+        <td><%= produto.material.try(:name) %></td>
+        <td><%= link_to 'Mostrar', produto %>
+            <%= link_to 'Editar', edit_produto_path(produto), target: :_blank %>
+            <%= link_to 'Excluir', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Produto', new_produto_path %>

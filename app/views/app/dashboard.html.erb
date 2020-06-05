@@ -1,0 +1,26 @@
+<div id="wrapper">
+
+<h4 class="center">Analise Mensal de Entregas</h4>
+<br>
+  <div align="left">
+      <%= form_tag '', :method => :get do %>
+        <div class="row">
+          <div class="col s3">
+
+            <%= date_field_tag :dt_analise, nil, :placeholder =>'Informe Mês Analise...', :class=>"datepicker" %>
+          </div>
+
+          <div class="col s3">
+            <a class="waves-effect waves-light btn"><%= submit_tag 'Analisar Periodo' %></a>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+
+        <%= render 'entregas' %>
+
+        <!-- <= render 'tags' %>
+        <= render 'saldos' %> -->
+</div>

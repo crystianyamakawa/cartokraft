@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nm_cliente: MyString
+  cliente_id: 1
+  vl_pedido: 1.5
+  status: MyString
+  dt_prevista: 2020-05-21
+  obs: MyText
+  created_by: MyString
+  updated_by: MyString
+
+two:
+  nm_cliente: MyString
+  cliente_id: 1
+  vl_pedido: 1.5
+  status: MyString
+  dt_prevista: 2020-05-21
+  obs: MyText
+  created_by: MyString
+  updated_by: MyString

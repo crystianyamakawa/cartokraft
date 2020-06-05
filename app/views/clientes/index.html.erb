@@ -1,0 +1,37 @@
+<h4>Lista de Clientes</h4>
+
+<table id="datatable" class="mdl-data-table" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th >Contato</th>
+      <th class="center">CPF/CNPJ</th>
+      <th class="center">Telefone</th>
+      <th class="center">Celular</th>
+      <th class="center">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= cliente.name %></td>
+        <td><%= cliente.nm_contato %></td>
+        <td class="center"><%= cliente.nr_cpf_cnpj %></td>
+        <td class="center"><%= cliente.nr_telefone %></td>
+        <td class="center"><%= cliente.nr_celular %></td>
+
+        <td><%= link_to 'Mostrar', cliente %>
+            <%= link_to 'Editar', edit_cliente_path(cliente) %>
+            <%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Confirma Exclusão?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to 'Novo Cliente', new_cliente_path %>
+
+<!-- <div class="text-center">
+    < will_paginate @clientes %>
+</div> -->

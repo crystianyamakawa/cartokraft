@@ -1,0 +1,99 @@
+<%= form_for(produto) do |f| %>
+  <% if produto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+
+      <ul>
+      <% produto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col s5">
+      <%= f.label :"Cliente" %>
+      <%= f.select(:cliente_id, @clientes.map {|s| [s.name, s.id]})%>
+
+    </div>
+    <div class="col s5">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="col s2">
+      <%= f.label :nr_localizador %>
+      <%= f.text_field :nr_localizador %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s5">
+      <%= f.label :"Material" %>
+      <%= f.select(:material_id, @material.map {|s| [s.name, s.id]},:include_blank => true)%>
+
+    </div>
+    <div class="col s2">
+      <%= f.label :Perda %>
+      <%= f.text_field :perda %>
+    </div>
+    <div class="col s2">
+      <%= f.label :"Quantidade por Chapa" %>
+      <%= f.text_field :qt_chapa %>
+    </div>
+
+    <div class="col s3">
+      <%= f.label :status %>
+      <%= f.select :status, @status %>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col s3">
+      <%= f.label :largura %>
+      <%= f.text_field :largura %>
+    </div>
+    <div class="col s3">
+      <%= f.label :comprimento %>
+      <%= f.text_field :comprimento %>
+    </div>
+    <div class="col s3">
+      <%= f.label :altura %>
+      <%= f.text_field :altura %>
+    </div>
+    <div class="col s3">
+      <%= f.label :area %>
+      <%= f.text_field :area %>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col s3">
+      <%= f.label :"Valor Custo" %>
+      <%= f.text_field :vl_custo %>
+    </div>
+
+    <div class="col s3">
+      <%= f.label :"valor venda" %>
+      <%= f.text_field :vl_venda %>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :obs %>
+      <%= f.text_area :obs ,class: "materialize-textarea" %>
+
+    </div>
+
+  </div>
+
+
+  <div class="actions">
+    <a class="waves-effect waves-light btn"><%= f.submit "Gravar" %></a>
+  </div>
+<% end %>

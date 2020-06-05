@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  fornecedor_id: 1
+  vl_total: 1.5
+  status: 
+  dt_recebimento: 2017-06-27
+  obs: MyText
+  created_by: MyString
+  updated_by: MyString
+
+two:
+  descricao: MyString
+  fornecedor_id: 1
+  vl_total: 1.5
+  status: 
+  dt_recebimento: 2017-06-27
+  obs: MyText
+  created_by: MyString
+  updated_by: MyString

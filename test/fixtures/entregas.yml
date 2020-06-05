@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  venda_id: 1
+  cliente_id: 1
+  vl_total: 1.5
+  status: MyString
+  dt_entrega: 2017-07-07
+  obs: MyText
+  nr_notafiscal: MyString
+  created_by: MyString
+  updated_by: MyString
+
+two:
+  venda_id: 1
+  cliente_id: 1
+  vl_total: 1.5
+  status: MyString
+  dt_entrega: 2017-07-07
+  obs: MyText
+  nr_notafiscal: MyString
+  created_by: MyString
+  updated_by: MyString

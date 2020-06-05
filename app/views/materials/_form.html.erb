@@ -1,0 +1,72 @@
+<%= form_for(material) do |f| %>
+  <% if material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(material.errors.count, "error") %> prohibited this material from being saved:</h2>
+
+      <ul>
+      <% material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nr_localizador %>
+    <%= f.text_field :nr_localizador %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :area %>
+    <%= f.number_field :area %>
+  </div>
+
+  <div class="field">
+    <%= f.label :largura %>
+    <%= f.number_field :largura %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comprimento %>
+    <%= f.number_field :comprimento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tp_material %>
+    <%= f.text_field :tp_material %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fornecedor_id %>
+    <%= f.number_field :fornecedor_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :obs %>
+    <%= f.text_area :obs %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_by %>
+    <%= f.text_field :created_by %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_by %>
+    <%= f.text_field :updated_by %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

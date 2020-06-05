@@ -1,0 +1,1 @@
+(function(){$(document).on("turbolinks:load",function(){return $("select").material_select(),$(".modal").modal(),$(".button-collapse").sideNav()})}).call(this);

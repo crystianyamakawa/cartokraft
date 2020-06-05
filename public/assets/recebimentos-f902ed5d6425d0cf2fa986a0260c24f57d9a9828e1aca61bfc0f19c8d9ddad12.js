@@ -1,0 +1,1 @@
+function gerar_receita(){var a=$("#fin_conta").val(),r=$("#nr_parcela").val(),e=$("#vl_parcela").val(),c=$("#dt_inicio").val(),i=$("#receita_id").val(),l=$("#recorrencia").val();$.get("gerar_entrada",{conta:a,nr_parcelas:r,vl_parcelas:e,dt_inicio:c,receita_id:i,recorrencia:l}),console.log("Enviou ao controller")}

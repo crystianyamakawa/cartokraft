@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pedido_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pedido</th>
+      <th>Ds produto</th>
+      <th>Produto</th>
+      <th>Vl largura</th>
+      <th>Vl comprimento</th>
+      <th>Vl altura</th>
+      <th>Tp papel</th>
+      <th>Tp produto</th>
+      <th>Qt pedido</th>
+      <th>Qt produzido</th>
+      <th>Vl custo</th>
+      <th>Vl venda</th>
+      <th>Vl total</th>
+      <th>Status</th>
+      <th>Obs</th>
+      <th>Dt prevista</th>
+      <th>Dt entrega</th>
+      <th>Dt produzido</th>
+      <th>Created by</th>
+      <th>Updated by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pedido_items.each do |pedido_item| %>
+      <tr>
+        <td><%= pedido_item.pedido_id %></td>
+        <td><%= pedido_item.ds_produto %></td>
+        <td><%= pedido_item.produto_id %></td>
+        <td><%= pedido_item.vl_largura %></td>
+        <td><%= pedido_item.vl_comprimento %></td>
+        <td><%= pedido_item.vl_altura %></td>
+        <td><%= pedido_item.tp_papel %></td>
+        <td><%= pedido_item.tp_produto %></td>
+        <td><%= pedido_item.qt_pedido %></td>
+        <td><%= pedido_item.qt_produzido %></td>
+        <td><%= pedido_item.vl_custo %></td>
+        <td><%= pedido_item.vl_venda %></td>
+        <td><%= pedido_item.vl_total %></td>
+        <td><%= pedido_item.status %></td>
+        <td><%= pedido_item.obs %></td>
+        <td><%= pedido_item.dt_prevista %></td>
+        <td><%= pedido_item.dt_entrega %></td>
+        <td><%= pedido_item.dt_produzido %></td>
+        <td><%= pedido_item.created_by %></td>
+        <td><%= pedido_item.updated_by %></td>
+        <td><%= link_to 'Show', pedido_item %></td>
+        <td><%= link_to 'Edit', edit_pedido_item_path(pedido_item) %></td>
+        <td><%= link_to 'Destroy', pedido_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pedido_item', new_pedido_item_path %>

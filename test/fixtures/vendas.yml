@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  cliente_id: 1
+  vl_total: 1.5
+  vl_imposto: 1.5
+  status: MyString
+  dt_prevista: 2017-07-07
+  obs: MyText
+  nr_notafiscal: MyString
+  created_by: MyString
+  updated_by: MyString
+
+two:
+  descricao: MyString
+  cliente_id: 1
+  vl_total: 1.5
+  vl_imposto: 1.5
+  status: MyString
+  dt_prevista: 2017-07-07
+  obs: MyText
+  nr_notafiscal: MyString
+  created_by: MyString
+  updated_by: MyString

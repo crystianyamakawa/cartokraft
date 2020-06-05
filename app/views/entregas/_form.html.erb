@@ -1,0 +1,73 @@
+<%= form_for(entrega) do |f| %>
+  <% if entrega.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entrega.errors.count, "error") %> prohibited this entrega from being saved:</h2>
+
+      <ul>
+      <% entrega.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+      <div class="col s6">
+      <%= f.label "Cliente" %>
+      <%= f.select(:cliente_id, @clientes.map {|s| [s.name, s.id]}, { id: 'cliente_select' })%>
+      </div>
+      
+  </div>
+  <div class="row">
+    <div class="col s4">
+      <%= f.label :dt_entrega %>
+      <%= f.date_field :dt_entrega,  class: "datepicker" %>
+    </div>
+    <div class="col s4">
+      <%= f.label :vl_total %>
+      <%= f.text_field :vl_total %>
+    </div>
+    <div class="col s4">
+      <%= f.label :status %>
+      <%=  f.select(:status, @status) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s4">
+        <%= f.label :nr_notafiscal %>
+        <%= f.text_field :nr_notafiscal %>
+    </div>
+    <div class="col s8">
+      <%= f.label :obs %>
+      <%= f.text_field :obs, class:"materialize-textarea" %>
+    </div>
+  </div>
+  <div class="row">
+        <div class="col s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><h5>Itens da Entrega</h5></span>
+              <%= f.fields_for :entrega_items do |item| %>
+              <div class="row">
+                  <%= render "entrega_item_fields", :f => item %>
+                  </div>
+
+              <% end%>
+
+            </div>
+            <div class="card-action">
+              <!-- link_to_add_fields(name, f, association) -->
+              <!-- <= link_to_add_fields "Novo Item", f, "entrega_item"%> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="actions">
+  <a class="waves-effect waves-light btn"><%= f.submit "Gravar" %></a>
+  </div>
+
+
+<% end %>

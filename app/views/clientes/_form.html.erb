@@ -1,0 +1,80 @@
+<%= form_for(@cliente) do |f| %>
+  <div class="row">
+    <div class="col s6">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="col s6">
+      <%= f.label :contato %>
+      <%= f.text_field :nm_contato %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s4">
+      <%= f.label :"CNPJ/CFP" %>
+      <%= f.text_field :nr_cpf_cnpj %>
+    </div>
+    <div class="col s4">
+      <%= f.label :"Tipo Documento" %>
+      <%= f.select(:tp_documento, ["INSC.ESTADUAL","RG"]) %>
+    </div>
+    <div class="col s4">
+      <%= f.label :"Nº Documento" %>
+      <%= f.text_field :nr_documento %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s4">
+      <%= f.label :"Telefone Fixo" %>
+      <%= f.text_field :nr_telefone %>
+    </div>
+    <div class="col s4">
+      <%= f.label :"Celular" %>
+      <%= f.text_field :nr_celular %>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col s8">
+      <%= f.label :"Rua" %>
+      <%= f.text_field :rua %>
+    </div>
+    <div class="col s2">
+      <%= f.label :"Numero" %>
+      <%= f.text_field :numero %>
+    </div>
+    <div class="col s2">
+      <%= f.label :"Compl" %>
+      <%= f.text_field :complemento %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s3">
+      <%= f.label :"Bairro" %>
+      <%= f.text_field :bairro %>
+    </div>
+    <div class="col s6">
+      <%= f.label :"Cidade" %>
+      <%= f.text_field :cidade %>
+    </div>
+    <div class="col s1">
+      <%= f.label :"UF" %>
+      <%= f.select(:uf, ["PR","SC","SP"]) %>
+    </div>
+    <div class="col s2">
+      <%= f.label :"Cep" %>
+      <%= f.text_field :cep %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :"Obs" %>
+      <%= f.text_field :obs %>
+    </div>
+  </div>
+  <br>
+  <div class="actions">
+  <a class="waves-effect waves-light btn"><%= f.submit "Gravar" %></a>
+  </div>
+<% end %>

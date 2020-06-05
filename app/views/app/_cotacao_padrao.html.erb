@@ -1,0 +1,69 @@
+<div class="row">
+       <div class="col xl12">
+         <div class="card blue-grey darken-1">
+           <div class="card-content white-text">
+             <span class="card-title">Cotação de Caixas</span>
+             <p>Entre com as medidas da caixa em centimetros.</p>
+             <div class="row">
+                 <form class="col xl8">
+                   <div class="row">
+                     <div class="input-field col m3">
+                       <input id="largura" type="text" class="validate">
+                       <label for="first_name">Largura</label>
+                     </div>
+                     <div class="input-field col m3">
+                       <input id="comprimento" type="text" class="validate">
+                       <label for="last_name">Comprimento</label>
+                     </div>
+                     <div class="input-field col m3">
+                       <input id="altura" type="text" class="validate">
+                       <label for="last_name">Altura</label>
+                     </div>
+                   </div>
+
+                   <div class="row">
+                     <div class="input-field col m3">
+                       <input id="vl_custo" type="text" class="validate">
+                       <label for="first_name">Custo do Papelão</label>
+                     </div>
+                     <div class="input-field col m3">
+                       <input id="margem" type="text" class="validate">
+                       <label for="first_name">Margem sobre Custo</label>
+                     </div>
+                   </div>
+                 </form>
+
+                 <div class="row">
+                 <table class="col xl3">
+                     <tbody>
+                       <tr>
+                         <td>Comprimento Chapa:</td>
+                         <td align="right"><label class="flow-text" id="lb_comprimento"></label></td>
+                       </tr>
+                       <tr>
+                         <td>Largura Chapa:</td>
+                         <td align="right"><label class="flow-text" id="lb_largura"></label></td>
+                       </tr>
+                       <tr>
+                         <td>Area Chapa:</td>
+                         <td align="right"><label class="flow-text" id="lb_area"></label></td>
+                       </tr>
+                       <tr>
+                         <td>Custo da Chapa:</td>
+                         <td align="right"><label class="flow-text" id="lb_custo"></label></td>
+                       </tr>
+                       <tr>
+                         <td>Preço Venda:</td>
+                         <td ><label class="flow-text" id="lb_preco"></label></td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
+              </div>
+           </div>
+           <div class="card-action">
+             <a  onclick="cotacao_padrao();">Calcular caixa</a>
+           </div>
+         </div>
+       </div>
+</div>

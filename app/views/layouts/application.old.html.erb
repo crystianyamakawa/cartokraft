@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cartokraft</title>
+  </head>
+
+  <body>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <nav class="noPrint">
+
+
+         <!-- <a href="<= AppPath + "/app" %>" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
+          <div class="nav-wrapper cyan darken-3">
+            <a href="<%= AppPath %>/" class="brand-logo"><i class="material-icons">view_quilt</i>  CARTOKRAFT</a>
+
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <!-- Dropdown Trigger -->
+              <% if current_user %>
+              <li>
+                <a href="#" class='dropdown-button' data-activates='dashboard' data-beloworigin="true" alignment='left'>Painel Gestão<i class="material-icons right">arrow_drop_down</i></a>
+                <ul id="dashboard" class="dropdown-content">
+                  <li><a href="<%= AppPath + "/app/dashboard" %>">Entregas Mes</a></li>
+                  <li><a href="<%= AppPath + "/app/entregas_detalhes" %>">Entregas Mes - Detalhes</a></li>
+                </ul>
+
+              </li>
+              <li>
+                <ul id="dropdown2" class="dropdown-content">
+                   <li><a href="#!">one<span class="badge">1</span></a></li>
+                   <li><a href="#!">two<span class="new badge">1</span></a></li>
+                   <li><a href="#!">three</a></li>
+                 </ul>
+                 <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
+
+              </li>
+              <li>
+                <a href="#" class='dropdown-button' data-activates='cot' data-beloworigin="true" alignment='left'>Cotação<i class="material-icons right">arrow_drop_down</i></a>
+                <ul id="cot" class="dropdown-content">
+                  <li><a href="<%= AppPath + "/app/cotacao_padrao" %>">Caixa Padrão</a></li>
+                  <li><a href="<%= AppPath + "/app/cotacao_fundo_tampa" %>">Fundo e Tampa</a></li>
+
+                </ul>
+
+              </li>
+
+              <li><a href="<%= AppPath + "/admin" %>" target="_blank">Administrativo</a></li>
+              <!-- <li><a href="<%= AppPath + "/vendas" %>">Vendas</a></li> -->
+              <li>  <%= link_to('Sair', destroy_user_session_path, :method => :delete) %></li>
+            <% else %>
+              <li><a href="<%= AppPath + "/users/sign_in" %>">Entrar</a></li>
+              <li><a href="<%= AppPath + "/users/sign_up" %>">Novo Usuário</a></li>
+          <% end %>
+            </ul>
+
+        </div>
+  </nav>
+  <!-- <div class="row">
+
+        <div class="col s3">
+          <!-- Grey navigation panel -->
+        <!-- </div> -->
+
+        <!-- <div class="col s9"> -->
+          <!-- Teal page content  -->
+          <div class="container">
+            <%= yield %>
+          </div>
+  <!-- </div> -->
+
+  <!-- </div> -->
+
+
+
+  </body>
+</html>

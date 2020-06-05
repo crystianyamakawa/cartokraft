@@ -1,0 +1,117 @@
+<%= form_for(pedido_item) do |f| %>
+  <% if pedido_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pedido_item.errors.count, "error") %> prohibited this pedido_item from being saved:</h2>
+
+      <ul>
+      <% pedido_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pedido_id %>
+    <%= f.number_field :pedido_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ds_produto %>
+    <%= f.text_field :ds_produto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :produto_id %>
+    <%= f.number_field :produto_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_largura %>
+    <%= f.text_field :vl_largura %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_comprimento %>
+    <%= f.text_field :vl_comprimento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_altura %>
+    <%= f.text_field :vl_altura %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tp_papel %>
+    <%= f.text_field :tp_papel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tp_produto %>
+    <%= f.text_field :tp_produto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :qt_pedido %>
+    <%= f.text_field :qt_pedido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :qt_produzido %>
+    <%= f.text_field :qt_produzido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_custo %>
+    <%= f.text_field :vl_custo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_venda %>
+    <%= f.text_field :vl_venda %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_total %>
+    <%= f.text_field :vl_total %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :obs %>
+    <%= f.text_area :obs %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dt_prevista %>
+    <%= f.date_select :dt_prevista %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dt_entrega %>
+    <%= f.date_select :dt_entrega %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dt_produzido %>
+    <%= f.date_select :dt_produzido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_by %>
+    <%= f.text_field :created_by %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_by %>
+    <%= f.text_field :updated_by %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

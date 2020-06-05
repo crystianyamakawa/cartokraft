@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entrega_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entrega</th>
+      <th>Produto</th>
+      <th>Quantidade</th>
+      <th>Vl unitario</th>
+      <th>Vl total</th>
+      <th>Status</th>
+      <th>Obs</th>
+      <th>Created by</th>
+      <th>Updated by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entrega_items.each do |entrega_item| %>
+      <tr>
+        <td><%= entrega_item.entrega_id %></td>
+        <td><%= entrega_item.produto_id %></td>
+        <td><%= entrega_item.quantidade %></td>
+        <td><%= entrega_item.vl_unitario %></td>
+        <td><%= entrega_item.vl_total %></td>
+        <td><%= entrega_item.status %></td>
+        <td><%= entrega_item.obs %></td>
+        <td><%= entrega_item.created_by %></td>
+        <td><%= entrega_item.updated_by %></td>
+        <td><%= link_to 'Show', entrega_item %></td>
+        <td><%= link_to 'Edit', edit_entrega_item_path(entrega_item) %></td>
+        <td><%= link_to 'Destroy', entrega_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entrega_item', new_entrega_item_path %>

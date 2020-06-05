@@ -1,0 +1,109 @@
+
+<div class="card">
+  <div class="card-content blue-grey darken-3 white-text">
+    <h4>Consulta de Cliente</h4><br>
+    <div class="row">
+        <div class="col s6">
+          <label>name</label>
+          <input value="<%=@cliente.name%>">
+        </div>
+        <div class="col s6">
+          <label>name Contato</label>
+          <input value="<%=@cliente.nm_contato%>">
+        </div>
+
+    </div>
+    <div class="row">
+      <div class="col s4">
+        <label>Telefone Fixo</label>
+        <input value="<%=@cliente.nr_telefone%>">
+      </div>
+      <div class="col s4">
+        <label>Celular</label>
+        <input value="<%=@cliente.nr_celular%>">
+      </div>
+      <div class="col s4">
+        <label>CNPJ/CFP</label>
+        <input value="<%=@cliente.nr_cpf_cnpj%>">
+      </div>
+    </div>
+
+  </div>
+  <div class="card-tabs">
+    <ul class="tabs tabs-fixed-width">
+      <li class="tab"><a class="active" href="#detalhes">Detalhes</a></li>
+      <li class="tab"><a  href="#produtos">Produtos</a></li>
+      <li class="tab"><a  href="#pedidos">Histórico de Pedidos</a></li>
+    </ul>
+  </div>
+  <div class="card-content blue-grey lighten-5">
+    <div id="detalhes">
+      <div class="row">
+
+        <div class="col s4">
+          <label>Tipo Documento</label>
+          <input value="<%=@cliente.tp_documento%>">
+        </div>
+        <div class="col s4">
+          <label>Nº Documento</label>
+          <input value="<%=@cliente.nr_documento%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s8">
+          <label>Rua</label>
+          <input value="<%=@cliente.rua%>">
+        </div>
+        <div class="col s2">
+          <label>Numero</label>
+          <input value="<%=@cliente.numero%>">
+        </div>
+        <div class="col s2">
+          <label>Complemento</label>
+          <input value="<%=@cliente.complemento%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s3">
+          <label>Bairro</label>
+          <input value="<%=@cliente.bairro%>">
+        </div>
+        <div class="col s6">
+          <label>Cidade</label>
+          <input value="<%=@cliente.cidade%>">
+        </div>
+        <div class="col s1">
+          <label>UF</label>
+          <input value="<%=@cliente.uf%>">
+        </div>
+        <div class="col s2">
+          <label>Cep</label>
+          <input value="<%=@cliente.cep%>">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <label>Obs</label>
+          <input value="<%=@cliente.obs%>" class="materialize-textarea">
+        </div>
+      </div>
+    </div>
+    <div id="produtos">
+      <div class="row">
+        <div class="col s12">
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+    <%= link_to 'Editar', edit_cliente_path(@cliente) %> |
+    <%= link_to 'Voltar', clientes_path %>
+    <!-- <a href=<%= edit_cliente_path(@cliente) %> class="btn btn-primary btn-large">
+    Editar
+    </a> -->
