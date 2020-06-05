@@ -91,7 +91,7 @@
     <div class="card fm_pedidos_abertos" style="background-color: #7c7c7c;">
           <div class="alert">
               <h4 class="alert-heading">Em Produção - R$ <%= number_with_precision(@vl_pedidos_producao, precision: 2) %>
-                <button class="btn btn-sm btn-primary float-right" type="button" data-toggle="collapse" data-target="#collapseProducao" aria-expanded="false" aria-controls="collapseProducao">
+                <button class="btn btn-sm btn-primary float-right" type="button" data-toggle="collapse" data-target="#collapseProducao" aria-expanded="true" aria-controls="collapseProducao">
                   ...
                 </button>
 
@@ -162,9 +162,9 @@
                   <td><%= pedido.ds_produto %></td>
                   <td><%= pedido.status %></td>
                   <td class="text-center"><%= pedido.dt_prevista.try(:strftime, "%d/%m/%Y") %></td>
-                  <td class="text-right"><%= pedido.vl_total_pedido %></td>
-                  <td class="text-right"><%= pedido.vl_custo * pedido.qt_produzido %></td>
-                  <td class="text-right"><%= pedido.vl_total_venda %></td>
+                  <td class="text-right"><%= number_with_precision(pedido.vl_total_pedido, precision: 2) %></td>
+                  <td class="text-right"><%= number_with_precision(pedido.vl_custo * pedido.qt_produzido, precision: 2) %></td>
+                  <td class="text-right"><%= number_with_precision(pedido.vl_total_venda, precision: 2) %></td>
 
                   <td class="text-center">
                     <%= link_to 'Entregar', pedido, method: :produzir, data: { confirm: 'Confirma a Produção?' } %></td>

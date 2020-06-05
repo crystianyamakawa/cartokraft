@@ -16,7 +16,7 @@ class PedidosController < ApplicationController
         filter << [ " status LIKE '%#{status}%'"]
       end
     end
-    @pedidos = Pedido.where(filter.join(" And ")).paginate(:page => params[:page], :per_page =>8 )
+    @pedidos = Pedido.where(filter.join(" And ")).paginate(:page => params[:page], :per_page =>15 )
     setList
 
   end
@@ -105,8 +105,8 @@ class PedidosController < ApplicationController
       @clientes = Cliente.order('name ASC')
       @produtos = Produto.order('name ASC')
       @status = ["Orçamento","Pedido", "Em Produção", "Produzido", "Entregue"]
-      @tp_papel = ["Papel Simples","Papel Duplo","Papel Branco"]
-      @tp_produto = ["Caixa Maleta","Corte e Vinco","Especial"]
+      @tp_papel = ["Papel Simples","Papel Duplo","Papel Branco", "Onda T"]
+      @tp_produto = ["Caixa Maleta","Corte e Vinco","Fundo e Tampa","Especial"]
       # @contratos = Contrato.order("dt_evento ASC")
     end
 
