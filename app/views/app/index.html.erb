@@ -48,7 +48,7 @@
             </button>
           </h4>
           <br>
-            <div class="collapse" id="collapseAbertos">
+            <div class="collapse show" id="collapseAbertos">
             <table class="table">
             <thead>
               <tr>
@@ -97,7 +97,7 @@
 
               </h4>
               <br>
-                <div class="collapse" id="collapseProducao">
+                <div class="collapse show" id="collapseProducao">
                     <table class="table">
                   <thead>
                     <tr>
@@ -131,7 +131,7 @@
                 </table>
               </div>
               <hr>
-              <a  href="/pedidos?utf8=✓&cliente=&status=Em Produção&commit=Filtar+Registros" target= "_blank" class="btn btn-primary  float-right">Detalhes</a>
+              <!-- <a  href="/pedidos?utf8=✓&cliente=&status=Em Produção&commit=Filtar+Registros" target= "_blank" class="btn btn-primary  float-right">Detalhes</a> -->
             </div>
     </div>
     </div>
@@ -141,7 +141,7 @@
       <div class="alert"  >
           <h4 class="alert-heading">Produzido - R$ <%= number_with_precision(@vl_pedidos_produzidos, precision: 2) %></h4>
           <div class="table-responsive">
-          <table class="table">
+          <table class="table" id="grid_consulta">
             <thead>
               <tr>
                 <th>Cliente</th>
@@ -174,7 +174,7 @@
           </table>
         </div>
         <hr>
-        <a  href="/pedidos?utf8=✓&cliente=&status=Em Produção&commit=Filtar+Registros" target= "_blank" class="btn btn-primary float-right">Detalhes</a>
+        <!-- <a  href="/pedidos?utf8=✓&cliente=&status=Em Produção&commit=Filtar+Registros" target= "_blank" class="btn btn-primary float-right">Detalhes</a> -->
       </div>
       </div>
   </div>

@@ -9,6 +9,13 @@
 
 // materialize-sprockets
 
+function currency_to_number(inField, outField ){
+  var currency = $(inField).val();
+  var outf = $(outField).attr('id');
+  currency = currency.replace(/[^0-9\,]+/g,"");
+  currency = currency.replace(',',".");
+  document.getElementById(outf).value = currency;
+}
 
 function remove_fields( link) {
   //$(link).prevAll("input[type=hidden]").first().val("1");
