@@ -98,8 +98,8 @@ class AppController < ApplicationController
         # @entregasPendentes = Entrega.where("status = 2").sum("vl_total")
         # @ProducaoMesAtual = Entrega.where(["status <> 5 and dt_faturamento >=? and dt_faturamento <=?", @dt_atual_ini,@dt_atual_fim]).order(:dt_entrega)
 
-        @pedidos_abertos = Pedido.where(" status LIKE '%Pedido%' and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim)
-        @vl_pedidos_abertos = Pedido.where(" status LIKE '%Pedido%' and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim).sum("vl_total_pedido")
+        @pedidos_abertos = Pedido.where(" status LIKE '%Pedido%'" )
+        @vl_pedidos_abertos = Pedido.where(" status LIKE '%Pedido%' ").sum("vl_total_pedido")
         # and dt_faturamento >=? and dt_faturamento <=?", @dt_atual_ini,@dt_atual_fim]
         @pedidos_producao = Pedido.where(" status LIKE '%Produção%' and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim)
         @vl_pedidos_producao = Pedido.where(" status LIKE '%Produção%' and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim).sum("vl_total_pedido")

@@ -3,11 +3,10 @@
 //= require chartkick
 //= require jquery_ujs
 //= require bootstrap
-// require  jquery.dataTables
 //= require_tree .
 
 
-// materialize-sprockets
+
 
 function currency_to_number(inField, outField ){
   var currency = $(inField).val();
@@ -16,6 +15,11 @@ function currency_to_number(inField, outField ){
   currency = currency.replace(',',".");
   document.getElementById(outf).value = currency;
 }
+
+function func_test(){
+   alert("Entrou no JavaScript");
+}
+
 
 function remove_fields( link) {
   //$(link).prevAll("input[type=hidden]").first().val("1");
@@ -30,5 +34,5 @@ function add_fields(link, association, content) {
   $(link).parent().before(content.replace(regexp, new_id));
 }
 
-$(document).on 'rails_admin.dom_ready', ->
-  // alert("Entrou no JavaScript")
+$(document).ready ->
+   alert("Entrou no JavaScript")

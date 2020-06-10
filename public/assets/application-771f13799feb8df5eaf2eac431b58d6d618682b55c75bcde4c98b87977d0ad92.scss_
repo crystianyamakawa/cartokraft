@@ -1,0 +1,12 @@
+@import "materialize";
+@import "material_icons";
+
+// .container{
+//   width: 90%;
+// }
+
+@media print {
+.noPrint {
+    display:none;
+  }
+}

@@ -31,6 +31,31 @@ class PedidosController < ApplicationController
   # GET /pedidos/new
   def new
     @pedido = Pedido.new
+    if !params[:pedido_old].blank?
+
+      @pedido_old = Pedido.find(params[:pedido_old])
+      @pedido.nm_cliente = @pedido_old.nm_cliente
+      @pedido.ds_produto = @pedido_old.ds_produto
+
+      @pedido.tp_papel = @pedido_old.tp_papel
+      @pedido.tp_produto = @pedido_old.tp_produto
+      @pedido.vl_comprimento = @pedido_old.vl_comprimento
+      @pedido.vl_largura = @pedido_old.vl_largura
+      @pedido.vl_altura = @pedido_old.vl_altura
+      @pedido.qt_pedido = @pedido_old.qt_pedido
+      @pedido.vl_custo = @pedido_old.vl_custo
+      @pedido.vl_venda = @pedido_old.vl_venda
+
+
+      @pedido.vl_total_pedido = @pedido_old.vl_total_pedido
+
+
+
+    end if
+
+    @pedido.status = "Pedido"
+    @pedido.dt_prevista = Date.today + 15.days
+
     # @pedido.created_by = current_user.username
     # @pedido.updated_by = current_user.username
 

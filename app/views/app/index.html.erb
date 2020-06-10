@@ -27,10 +27,10 @@
         <h4 class="alert-heading">Pedidos - R$ <%= number_with_precision(@vl_total_pedidos, precision: 2) %>
           <div class="float-right">
             <%= form_tag '', :method => :get do %>
-            <%= date_field_tag :dt_analise, @dt_analise, :placeholder =>'Informe Mês Analise...', :class=>"datepicker" %>
+            <%= date_field_tag :dt_analise, @dt_analise, :placeholder =>'Informe Mês Analise...', :class=>"datepicker"%>
             <%= submit_tag 'Pesquisar' %>
             <% end %>
-            <!-- <button type="button" name="button" class="btn-md"> Pesquisar</button> -->
+            <button type="button" name="button" class="btn-md" onclick="func_test();"> Pesquisar</button>
           </div>
         </h4>
 
@@ -49,7 +49,7 @@
           </h4>
           <br>
             <div class="collapse show" id="collapseAbertos">
-            <table class="table">
+            <table class="table" id="grid_consulta">
             <thead>
               <tr>
                 <th>Dt Prevista</th>
@@ -72,7 +72,9 @@
                   <td><%= pedido.tp_produto %></td>
                   <td><%= pedido.vl_comprimento %>C X <%= pedido.vl_largura %>L X <%= pedido.vl_altura %>A </td>
                   <td class="text-center">
-                    <a  href="/pedidos" target= "_blank" class="btn btn-primary  float-right">Produzir</a>
+                    <!-- <a  href="/pedidos" target= "_blank" class="btn btn-primary  float-right">Produzir</a> -->
+                    <a  href="/pedidos/new?pedido_old=<%=pedido.id%>" target= "_blank" class="btn btn-primary  float-right"><i class="fa fa-calendar-check-o fa-2x"></i>Clone </a>
+
                 </tr>
               <% end %>
               </tbody>
@@ -167,8 +169,9 @@
                   <td class="text-right"><%= number_with_precision(pedido.vl_total_venda, precision: 2) %></td>
 
                   <td class="text-center">
-                    <%= link_to 'Entregar', pedido, method: :produzir, data: { confirm: 'Confirma a Produção?' } %></td>
-                </tr>
+                    <a  href="/pedidos/new?pedido_old=<%=pedido.id%>" target= "_blank" class="btn btn-primary  float-right">Duplicar</a>
+
+              </tr>
               <% end %>
               </tbody>
           </table>
