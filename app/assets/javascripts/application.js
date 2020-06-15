@@ -16,9 +16,6 @@ function currency_to_number(inField, outField ){
   document.getElementById(outf).value = currency;
 }
 
-function func_test(){
-   alert("Entrou no JavaScript");
-}
 
 
 function remove_fields( link) {
@@ -34,5 +31,19 @@ function add_fields(link, association, content) {
   $(link).parent().before(content.replace(regexp, new_id));
 }
 
-$(document).ready ->
-   alert("Entrou no JavaScript")
+$(document).ready(function(){
+   $(".totalvenda").keyup(function(){
+
+     var qt_venda = $("#edit_qt_pedido").val();
+     var qt_produzido = $("#edit_qt_produzido").val();
+     var vl_venda = $("#edit_vl_venda").val().replace(',',".");
+     var vl_custo = $("#edit_vl_custo").val().replace(',',".");
+     $("#edit_vl_venda").val(vl_venda);
+     $("#edit_vl_custo").val(vl_custo);
+
+     $("#edit_vl_total_pedido").val(Number(parseFloat(qt_venda) * parseFloat(vl_venda)).toFixed(2));
+     $("#edit_vl_total_venda").val(Number(parseFloat(qt_produzido) * parseFloat(vl_venda)).toFixed(2));
+
+   });
+
+ });

@@ -45,21 +45,21 @@
 
   <tr>
     <td colspan="2"><strong>Qtd Pedido:</strong></td>
-    <td colspan="1" ><%= f.text_field(:qt_pedido, id: "edit_qt_pedido") %></td>
+    <td colspan="1" ><%= f.text_field(:qt_pedido, id: "edit_qt_pedido", class: 'totalvenda') %></td>
     <td colspan="2"><strong>Valor Custo:</strong></td>
-    <td colspan="1"><%= f.text_field(:vl_custo) %></td>
+    <td colspan="1"><%= f.text_field(:vl_custo, id: "edit_vl_custo",class: 'totalvenda') %></td>
     <td colspan="2"><strong>Valor Venda:</strong></td>
-    <td colspan="1"><%=f.text_field(:vl_venda ) %></td>
+    <td colspan="1"><%=f.text_field(:vl_venda, id: "edit_vl_venda",class: 'totalvenda' ) %></td>
 
   </tr>
 
   <tr>
     <td colspan="2"><strong>Valor Pedido:</strong></td>
-    <td colspan="1"><%= f.text_field(:vl_total_pedido) %></td>
+    <td colspan="1"><%= f.text_field(:vl_total_pedido, id: "edit_vl_total_pedido") %></td>
     <td colspan="2"><strong>Qtd Produzido:</strong></td>
-    <td colspan="1"><%=f.text_field(:qt_produzido) %></td>
+    <td colspan="1"><%=f.text_field(:qt_produzido,  id: "edit_qt_produzido", class: 'totalvenda') %></td>
     <td colspan="2"><strong>Valor Venda:</strong></td>
-    <td colspan="1"><%= f.text_field(:vl_total_venda) %></td>
+    <td colspan="1"><%= f.text_field(:vl_total_venda,  id: "edit_vl_total_venda") %></td>
 
   </tr>
 
