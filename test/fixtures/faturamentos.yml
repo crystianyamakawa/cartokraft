@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dt_fechamento: 
+  vl_vendas: 
+  vl_custo: 
+  vl_bruto: 
+  vl_despesa: 
+  vl_liquido: 1.5
+
+two:
+  dt_fechamento: 
+  vl_vendas: 
+  vl_custo: 
+  vl_bruto: 
+  vl_despesa: 
+  vl_liquido: 1.5

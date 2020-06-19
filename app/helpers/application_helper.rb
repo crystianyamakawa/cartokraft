@@ -15,4 +15,23 @@ module ApplicationHelper
     end
   link_to( name,"#", "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
   end
+
+  def parse_faturamento_data(data)
+    faturamento_data[:data] = data[1]
+    faturamento_data = Hash.new
+    faturamento_data[:venda] = data[2]
+    faturamento_data[:custo] = data[3]
+    faturamento_data[:bruto] = data[4]
+    faturamento_data[:despesa] = data[5]
+    faturamento_data[:liquido] = data[6]
+  ({ 'Data' => faturamento_data[:data],
+     'Venda' => faturamento_data[:venda],
+     'Custo' => faturamento_data[:custo],
+     'Bruto' => faturamento_data[:bruto],
+     'Despesa' => faturamento_data[:despesa],
+     'Liquido' => faturamento_data[:liquido]
+        })
+      # //  puts faturamento_data
+  end
+
 end

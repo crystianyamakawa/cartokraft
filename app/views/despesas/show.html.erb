@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dt fechamento:</strong>
+  <%= @despesa.dt_fechamento %>
+</p>
+
+<p>
+  <strong>Nm despesa:</strong>
+  <%= @despesa.nm_despesa %>
+</p>
+
+<p>
+  <strong>Tp despesa:</strong>
+  <%= @despesa.tp_despesa %>
+</p>
+
+<p>
+  <strong>Dt despesa:</strong>
+  <%= @despesa.dt_despesa %>
+</p>
+
+<p>
+  <strong>Vl despesa:</strong>
+  <%= @despesa.vl_despesa %>
+</p>
+
+<%= link_to 'Edit', edit_despesa_path(@despesa) %> |
+<%= link_to 'Back', despesas_path %>

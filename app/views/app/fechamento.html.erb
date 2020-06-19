@@ -1,0 +1,75 @@
+<style >
+
+
+  .fm_pedidos_produzidos {
+    width: 1200px;
+    border: 1px solid #7c7c7c;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+
+</style>
+
+
+  <div class="row">
+    <div class="fm_pedidos_produzidos" style="background-color: #444444;color: white;">
+      <div class="alert">
+        <h4 class="alert-heading">Pedidos - R$ <%= number_with_precision(@vl_total_pedidos, precision: 2) %>
+          <div class="float-right">
+            <%= form_tag '', :method => :get do %>
+            <%= date_field_tag :dt_analise, @dt_analise, :placeholder =>'Informe Mês Analise...', :class=>"datepicker"%>
+            <%= submit_tag 'Pesquisar' %>
+            <% end %>
+            </div>
+        </h4>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="fm_pedidos_produzidos"">
+      <div class="alert"  >
+          <h4 class="alert-heading">Produzido - R$ <%= number_with_precision(@vl_pedidos_produzidos, precision: 2) %></h4>
+          <div class="table-responsive">
+          <table class="table table-sm" id="grid_consulta">
+            <thead>
+              <tr>
+                <th class="text-center">Dt Entrega</th>
+                <th>Cliente</th>
+                <th>Produto</th>
+                <th class="text-right">Qtd</th>
+                <th class="text-right">Vl Custo</th>
+                <th class="text-right">Total Custo</th>
+                <th class="text-right">Vl Venda</th>
+                <th class="text-right">Total Venda</th>
+
+
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @pedidos_produzidos.each do |pedido| %>
+                <tr>
+                  <!-- <td><= pedido.nm_cliente %></td> -->
+                  <td class="text-center"><%= pedido.dt_entrega.try(:strftime, "%d/%m/%Y") %></td>
+                  <td><%= pedido.nm_cliente %></td>
+                  <td><%= pedido.ds_produto %></td>
+                  <td><%= pedido.qt_produzido %></td>
+                  <td><%= number_with_precision(pedido.vl_custo, precision: 2) %></td>
+                  <td class="text-right"><%= number_with_precision(pedido.vl_custo * pedido.qt_produzido, precision: 2) %></td>
+                  <td><%=  number_with_precision(pedido.vl_venda, precision: 2) %></td>
+                  <td class="text-right"><%= number_with_precision(pedido.vl_total_venda, precision: 2) %></td>
+
+              </tr>
+              <% end %>
+              </tbody>
+          </table>
+        </div>
+        <hr>
+        <!-- <a  href="/pedidos?utf8=✓&cliente=&status=Em Produção&commit=Filtar+Registros" target= "_blank" class="btn btn-primary float-right">Detalhes</a> -->
+      </div>
+      </div>
+  </div>

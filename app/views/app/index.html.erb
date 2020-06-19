@@ -48,13 +48,13 @@
           </h4>
           <br>
             <div class="collapse show" id="collapseAbertos">
-            <table class="table" id="grid_consulta">
+            <table class="table table-sm" id="grid_consulta">
             <thead>
               <tr>
                 <th>Dt Prevista</th>
                 <th>Cliente</th>
                 <th>Produto</th>
-                <th>Tipo Papel</th>
+                <th class="text-right">Valor Pedido</th>
                 <th>Tipo Produto</th>
                 <th>Dimensões</th>
                 <th colspan="1" class="text-center">Ações</th>
@@ -67,12 +67,14 @@
                   <td class="text-center"><%= pedido.dt_prevista.try(:strftime, "%d/%m/%Y") %></td>
                   <td><%= pedido.nm_cliente %></td>
                   <td><%= pedido.ds_produto %></td>
-                  <td><%= pedido.tp_papel %></td>
+                  <td class="text-right"><%= number_with_precision(pedido.vl_total_pedido, precision: 2) %></td>
                   <td><%= pedido.tp_produto %></td>
                   <td><%= pedido.vl_comprimento %>C X <%= pedido.vl_largura %>L X <%= pedido.vl_altura %>A </td>
                   <td class="text-center">
                     <!-- <a  href="/pedidos" target= "_blank" class="btn btn-primary  float-right">Produzir</a> -->
-                    <a  href="/pedidos/new?pedido_old=<%=pedido.id%>" target= "_blank" class="btn btn-primary  float-right"><i class="fa fa-calendar-check-o fa-2x"></i>Clone </a>
+                    <%= link_to "Editar", edit_pedido_path(pedido), :target => '_blank' %>
+                    <%= link_to "Duplicar", "/pedidos/new?pedido_old=" + pedido.id.to_s, :target => '_blank' %>
+                      <!-- <a  href= target= "_blank" class="btn btn-primary  float-right"><i class="fa fa-calendar-check-o fa-2x"></i>Clone </a> -->
 
                 </tr>
               <% end %>
@@ -99,7 +101,7 @@
               </h4>
               <br>
                 <div class="collapse show" id="collapseProducao">
-                    <table class="table">
+                    <table class="table table-sm">
                   <thead>
                     <tr>
                       <th class="text-center">Dt Prevista</th>
@@ -125,7 +127,7 @@
                         <td><%= pedido.vl_comprimento %>C X <%= pedido.vl_largura %>L X <%= pedido.vl_altura %>A </td>
 
                         <td class="text-center">
-                          <a  href="/pedidos=Filtar+Registros" target= "_blank" >Produzido</a>
+                          <%= link_to "Editar", edit_pedido_path(pedido), :target => '_blank' %>
                       </tr>
                     <% end %>
                     </tbody>
@@ -142,13 +144,13 @@
       <div class="alert"  >
           <h4 class="alert-heading">Produzido - R$ <%= number_with_precision(@vl_pedidos_produzidos, precision: 2) %></h4>
           <div class="table-responsive">
-          <table class="table" id="grid_consulta">
+          <table class="table table-sm" id="grid_consulta">
             <thead>
               <tr>
                 <th>Cliente</th>
                 <th>Produto</th>
                 <th>Status</th>
-                <th class="text-center">Dt Prevista</th>
+                <th class="text-center">Dt Entrega</th>
                 <th class="text-right">Vl Pedido</th>
                 <th class="text-right">Vl Custo</th>
                 <th class="text-right">Vl Venda</th>
@@ -159,16 +161,19 @@
             <tbody>
               <% @pedidos_produzidos.each do |pedido| %>
                 <tr>
-                  <td><%= pedido.nm_cliente %></td>
+                  <!-- <td><= pedido.nm_cliente %></td> -->
+                  <td><%= link_to pedido.nm_cliente, edit_pedido_path(pedido), :target => '_blank' %></td>
                   <td><%= pedido.ds_produto %></td>
                   <td><%= pedido.status %></td>
-                  <td class="text-center"><%= pedido.dt_prevista.try(:strftime, "%d/%m/%Y") %></td>
+                  <td class="text-center"><%= pedido.dt_entrega.try(:strftime, "%d/%m/%Y") %></td>
                   <td class="text-right"><%= number_with_precision(pedido.vl_total_pedido, precision: 2) %></td>
                   <td class="text-right"><%= number_with_precision(pedido.vl_custo * pedido.qt_produzido, precision: 2) %></td>
                   <td class="text-right"><%= number_with_precision(pedido.vl_total_venda, precision: 2) %></td>
 
                   <td class="text-center">
-                    <a  href="/pedidos/new?pedido_old=<%=pedido.id%>" target= "_blank" class="btn btn-primary  float-right">Duplicar</a>
+                    <%= link_to 'Editar', edit_pedido_path(pedido), :target => '_blank' %>
+                    <%= link_to 'Duplicar', "/pedidos/new?pedido_old=" + pedido.id.to_s, :target => '_blank' %>
+                    <%# <a  href="/pedidos/new?pedido_old=<pedido.id" target= "_blank" class="btn btn-primary  float-right">Duplicar</a> %>
 
               </tr>
               <% end %>

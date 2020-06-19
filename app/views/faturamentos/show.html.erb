@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dt fechamento:</strong>
+  <%= @faturamento.dt_fechamento %>
+</p>
+
+<p>
+  <strong>Vl vendas:</strong>
+  <%= number_with_precision(@faturamento.vl_vendas, precision: 2) %>
+</p>
+
+<p>
+  <strong>Vl custo:</strong>
+  <%= number_with_precision(@faturamento.vl_custo, precision: 2) %>
+</p>
+
+<p>
+  <strong>Vl bruto:</strong>
+  <%= number_with_precision(@faturamento.vl_bruto, precision: 2) %>
+</p>
+
+<p>
+  <strong>Vl despesa:</strong>
+  <%= number_with_precision(@faturamento.vl_despesa, precision: 2) %>
+</p>
+
+<p>
+  <strong>Vl liquido:</strong>
+  <%= number_with_precision(@faturamento.vl_liquido , precision: 2)%>
+</p>
+
+<%= link_to 'Edit', edit_faturamento_path(@faturamento) %> |
+<%= link_to 'Back', faturamentos_path %>

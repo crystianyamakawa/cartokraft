@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :faturamentos
+  resources :despesas
   resources :pedido_items
   resources :pedidos
   resources :receipts
@@ -44,7 +46,7 @@ Rails.application.routes.draw do
 
   resources :app do
     collection do
-      get :dashboard, :cotacao,:entregas_detalhes, :cotacao_padrao, :cotacao_fundo_tampa
+      get :dashboard,:faturamento,:fechamento, :cotacao,:entregas_detalhes, :cotacao_padrao, :cotacao_fundo_tampa
     end
   end
 

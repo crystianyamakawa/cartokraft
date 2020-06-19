@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200528143259) do
+ActiveRecord::Schema.define(version: 20200618201548) do
 
   create_table "cliente_produtos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "cliente_id"
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 20200528143259) do
     t.string   "updated_by"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "despesas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.date     "dt_fechamento"
+    t.string   "nm_despesa"
+    t.string   "tp_despesa"
+    t.date     "dt_despesa"
+    t.decimal  "vl_despesa",    precision: 10
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "obs"
   end
 
   create_table "entrega_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -92,6 +103,17 @@ ActiveRecord::Schema.define(version: 20200528143259) do
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
     t.index ["partner_id"], name: "index_expenses_on_partner_id", using: :btree
+  end
+
+  create_table "faturamentos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.date     "dt_fechamento"
+    t.decimal  "vl_vendas",     precision: 10
+    t.decimal  "vl_custo",      precision: 10
+    t.decimal  "vl_bruto",      precision: 10
+    t.decimal  "vl_despesa",    precision: 10
+    t.decimal  "vl_liquido",    precision: 10
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "fornecedors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

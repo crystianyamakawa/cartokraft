@@ -1,0 +1,50 @@
+<%= javascript_include_tag 'application','bootstrap'%>
+
+
+<%= form_for(faturamento) do |f| %>
+  <% if faturamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(faturamento.errors.count, "error") %> prohibited this faturamento from being saved:</h2>
+
+      <ul>
+      <% faturamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dt_fechamento %>
+    <%= f.date_field :dt_fechamento, class: "datepicker" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_vendas %>
+    <%= f.text_field :vl_vendas ,id: "edit_vl_venda", class: 'totalfaturamento'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_custo %>
+    <%= f.text_field :vl_custo ,id: "edit_vl_custo" , class: 'totalfaturamento'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_bruto %>
+    <%= f.text_field :vl_bruto,id: "edit_vl_bruto", class: 'totalfaturamento' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_despesa %>
+    <%= f.text_field :vl_despesa ,id: "edit_vl_despesa" , class: 'totalfaturamento'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :vl_liquido %>
+    <%= f.text_field :vl_liquido ,id: "edit_vl_liquido" , class: 'totalfaturamento'%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

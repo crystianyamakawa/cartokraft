@@ -104,12 +104,55 @@ class AppController < ApplicationController
         @pedidos_producao = Pedido.where(" status LIKE '%Produção%' and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim)
         @vl_pedidos_producao = Pedido.where(" status LIKE '%Produção%' and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim).sum("vl_total_pedido")
 
-        @pedidos_produzidos = Pedido.where(" (status ='Produzido' or status = 'Entregue') and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim)
+        @pedidos_produzidos = Pedido.where(" (status ='Produzido' or status = 'Entregue') and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim).order(:dt_entrega)
         @vl_pedidos_produzidos = Pedido.where(" (status ='Produzido' or status = 'Entregue') and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim).sum("vl_total_venda")
 
         @vl_total_pedidos = @vl_pedidos_abertos +  @vl_pedidos_producao + @vl_pedidos_produzidos
 
       end
 
+      def fechamento
+        @dt_analise = Date.today
+        if !params[:dt_analise].blank?
+          dt_analise = Date.parse params[:dt_analise]
+          @dt_analise = dt_analise
+        else
+          dt_analise = Date.today
+        end
+
+
+        @dt_atual_ini = dt_analise.at_beginning_of_month
+        @dt_atual_fim = dt_analise.at_end_of_month
+
+
+
+        @pedidos_produzidos = Pedido.where(" (status ='Produzido' or status = 'Entregue') and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim).order(:dt_entrega)
+        @vl_pedidos_produzidos = Pedido.where(" (status ='Produzido' or status = 'Entregue') and (dt_fechamento is null or (dt_fechamento >=? and dt_fechamento <=?""))", @dt_atual_ini,@dt_atual_fim).sum("vl_total_venda")
+
+        @vl_total_pedidos =  @vl_pedidos_produzidos
+
+        render :fechamento
+      end
+
+
+      def faturamento
+        # @dt_analise = Date.today
+        # if !params[:dt_analise].blank?
+        #   dt_analise = Date.parse params[:dt_analise]
+        #   @dt_analise = dt_analise
+        # else
+        #   dt_analise = Date.today
+        # end
+
+
+        # @dt_atual_ini = dt_analise.at_beginning_of_month
+        # @dt_atual_fim = dt_analise.at_end_of_month
+
+
+
+        @Faturamento = Faturamento.group(:dt_fechamento).select("sum(vl_vendas) AS venda,sum(vl_custo) as custo, sum(vl_bruto) as bruto,sum(vl_despesa) as despesa,sum(vl_liquido) as liquido")
+
+
+      end
 
 end

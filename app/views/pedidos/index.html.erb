@@ -31,7 +31,7 @@
         <td class="text-center">
 
             <%= link_to 'Mostrar', pedido %>
-            <%= link_to 'Editar', edit_pedido_path(pedido) %>
+            <%= link_to 'Editar', edit_pedido_path(pedido), :target => '_blank' %>
             <%= link_to 'Eliminar', pedido, method: :delete, data: { confirm: 'Confirma a Exclusão?' } %></td>
       </tr>
     <% end %>
