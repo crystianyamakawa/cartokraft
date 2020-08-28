@@ -25,7 +25,7 @@
       <tr>
         <td><%= pedido.nm_cliente %></td>
         <td><%= pedido.ds_produto %></td>
-        <td class="text-center" ><%= pedido.vl_pedido %></td>
+        <td class="text-center" ><%= pedido.vl_total_pedido %></td>
         <td class="text-center"><%= pedido.status %></td>
         <td class="text-center"><%= pedido.dt_prevista.try(:strftime, "%d/%m/%Y") %></td>
         <td class="text-center">

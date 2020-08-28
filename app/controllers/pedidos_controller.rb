@@ -9,7 +9,7 @@ class PedidosController < ApplicationController
     if params.has_key?("cliente")
       if !params[:cliente].blank?
         nmcliente = params[:cliente]
-        filter << [" nm_cliente like '%#{nmcliente}'%"]
+        filter << [" nm_cliente like '%#{nmcliente}%'"]
       end
       if !params[:status].blank?
         status = params[:status]
