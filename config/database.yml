@@ -8,9 +8,9 @@ default: &default
 
 development:
   <<: *default
-  database: cartokraft
-  username: cartokraft
-  host: mysql.cartokraft.com.br
+  database: cart_db
+  username: cart_admin
+  host: monumentalle.com.br
   password: 123brain
   #<= ENV['ADMKRAFT_DATABASE_PASSWORD'] %># database: onkraft
   # username: root
@@ -19,7 +19,7 @@ development:
 
 production:
   <<: *default
-  database: cartokraft
-  username: cartokraft
-  host: mysql.cartokraft.com.br
+  database: cart_db
+  username: cart_admin
+  host: monumentalle.com.br
   password: 123brain #<= ENV['ADMKRAFT_DATABASE_PASSWORD'] %>
