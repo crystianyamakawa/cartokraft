@@ -1,1 +1,17 @@
-<%= column_chart @Faturamento.group(:dt_fechamento), xtitle: "Meses" %>
+<h1>Histórico</h1>
+​          <% series = [
+            {name: "Venda", data: @vendas},
+            {name: "Despesa", data: @despesas},
+          ] %>
+​
+<% options = {
+
+} %>
+​
+<%= area_chart(series, {**options, theme: 'palette5'}) %>
+
+<%= area_chart(series, {**options, theme: 'palette5'}) %>
+<%= combo_charts({**options, theme: 'palette1', stacked: false, data_labels: false}) do %>
+  <% column_chart(series.first) %>
+  <% area_chart(series.last) %>
+<% end %>

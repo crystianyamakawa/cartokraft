@@ -55,11 +55,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'materialize-sass'
-gem 'material_icons'
-gem 'googlecharts'
+# gem 'materialize-sass'
+# gem 'material_icons'
+# gem 'googlecharts'
 gem "chartkick"
 gem 'groupdate'
+gem 'apexcharts'
 
 gem 'devise' , '4.6.0'
 gem 'will_paginate'

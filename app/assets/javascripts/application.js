@@ -1,10 +1,11 @@
 //= require jquery
 //= require turbolinks
-//= require chartkick
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
+//= require chartkick
 //= require Chart.bundle
+//= require 'apexcharts'
+//= require_tree .
 
 
 function currency_to_number(inField, outField ){
