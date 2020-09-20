@@ -1,17 +1,29 @@
-<h1>Histórico</h1>
+<div class="card">
+    <div class="card-content ">
+      <h3>Venda/Lucro</h3>
 ​          <% series = [
             {name: "Venda", data: @vendas},
+            {name: "Papelão", data: @custo},
             {name: "Despesa", data: @despesas},
+            {name: "Liquido", data: @liquido}
           ] %>
 ​
-<% options = {
-
-} %>
+          <% options = {} %>
 ​
-<%= area_chart(series, {**options, theme: 'palette5'}) %>
-
-<%= area_chart(series, {**options, theme: 'palette5'}) %>
-<%= combo_charts({**options, theme: 'palette1', stacked: false, data_labels: false}) do %>
-  <% column_chart(series.first) %>
-  <% area_chart(series.last) %>
-<% end %>
+          <%= combo_charts({**options, theme: 'palette5', stacked: true, data_labels: false}) do %>
+            <% line_chart(series.first) %>
+            <% line_chart(series.last) %>
+          <% end %>
+        </div>
+    </div>
+<br>    
+<div class="card">
+    <div class="card-content ">
+      <h3>Venda / Custo</h3>
+        <%= combo_charts({**options, theme: 'palette1', stacked: true, data_labels: false}) do %>
+          <% line_chart(series.first) %>
+          <% column_chart(series.second) %>
+          <% column_chart(series.third) %>
+        <% end %>
+      </div>
+</div>

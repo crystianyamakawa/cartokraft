@@ -134,7 +134,9 @@ class AppController < ApplicationController
       def faturamento
 
             @vendas = Faturamento.group(:dt_fechamento).sum(:vl_vendas)
+            @custo = Faturamento.group(:dt_fechamento).sum(:vl_custo)
             @despesas = Faturamento.group(:dt_fechamento).sum(:vl_despesa)
+            @liquido = Faturamento.group(:dt_fechamento).sum(:vl_liquido)
 
       end
 

@@ -2,9 +2,9 @@
 //= require turbolinks
 //= require jquery_ujs
 //= require bootstrap
-//= require chartkick
-//= require Chart.bundle
-//= require 'apexcharts'
+//= require bootstrap.min
+//= require popper.min
+//= require apexcharts
 //= require_tree .
 
 

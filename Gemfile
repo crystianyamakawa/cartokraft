@@ -58,7 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem 'materialize-sass'
 # gem 'material_icons'
 # gem 'googlecharts'
-gem "chartkick"
+#gem "chartkick"
 gem 'groupdate'
 gem 'apexcharts'
 
