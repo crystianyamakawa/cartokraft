@@ -62,7 +62,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'groupdate'
 gem 'apexcharts'
 
-gem 'devise' , '4.6.0'
+gem 'devise' , '4.7.1'
 gem 'will_paginate'
 gem 'brazilian-rails'
 gem 'thinreports', '~> 0.9.1'
